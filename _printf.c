@@ -28,9 +28,16 @@ int _printf(const char *format, ...)
                 count += print_string(va_arg(args, int));
             else if (*format == '%')
                 count += _putchar('%');
-            else if (*format == 'd') || *format == ;i;
-                count += print_string(va_arg(args, int));
-            
+            else if (*format == 'd' || *format == 'i')
+                count += print_number(va_arg(args, int));
+            else
+                count += _putchar('%') + _putchar(*format);
         }
+        else
+            count += _putchar(*format);
+        format++;
     }
+
+    va_end (args);
+    return (count);
 }
