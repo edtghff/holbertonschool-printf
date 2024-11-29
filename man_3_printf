@@ -1,0 +1,84 @@
+.TH _PRINTF 3 "November 2024" "Holberton School" "Custom C Library Functions"
+
+.SH NAME
+_printf \- produces output according to a format
+
+.SH SYNOPSIS
+.B #include "main.h"
+.BI "int _printf(const char *format, ...);"
+
+.SH DESCRIPTION
+The
+.B _printf
+function produces output according to a format string, which specifies how subsequent arguments are converted for output.
+
+The format string is composed of zero or more directives. Ordinary characters are printed verbatim, and conversion specifiers are introduced with the percent sign (`%`).
+
+.SH CONVERSION SPECIFIERS
+The following conversion specifiers are supported:
+
+.TP
+.B %c
+Prints a single character.
+
+.TP
+.B %s
+Prints a string of characters.
+
+.TP
+.B %%
+Prints a percent sign.
+
+.TP
+.B %d, %i
+Prints a signed decimal integer.
+
+.TP
+.B %u
+Prints an unsigned decimal integer.
+
+.TP
+.B %o
+Prints an unsigned octal integer.
+
+.TP
+.B %x, %X
+Prints an unsigned hexadecimal integer (lowercase for `%x`, uppercase for `%X`).
+
+.TP
+.B %p
+Prints a pointer address in hexadecimal format.
+
+.SH RETURN VALUE
+The
+.B _printf
+function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+If an error occurs, the function returns
+.B -1.
+
+.SH EXAMPLES
+The following examples demonstrate usage of
+.B _printf:
+
+.TP
+.B printf("%c", 'H');
+Prints the character `H`.
+
+.TP
+.B printf("String: %s", "Holberton");
+Prints the string `String: Holberton`.
+
+.TP
+.B printf("Decimal: %d", 42);
+Prints the signed decimal integer `Decimal: 42`.
+
+.SH AUTHOR
+Ahmed Taghiyev & Renat Mirzayev, written by Holberton School students as a part of the low-level programming curriculum
+
+.SH BUGS
+No b
+
+.SH SEE ALSO
+.BR printf (3)
+
