@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _printf - custom printf function
- * @format: format string
+ * _printf - Custom printf function
+ * @format: Format string
  *
- * Return: number of characters printed
+ * Return: Number of characters
  */
 int _printf(const char *format, ...)
 {
@@ -21,19 +21,45 @@ int _printf(const char *format, ...)
         if (*format == '%')
         {
             format++;
-            if (*format == 'c')
-                count += _putchar(va_arg(args, int));
-            else if (*format == 's')
-                count += print_string(va_arg(args, char *));
-            else if (*format == '%')
-                count += _putchar('%');
-            else
-                count += _putchar('%') + _putchar(*format);
+
+            switch (*format)
+            {
+                case 'c':
+                    count += _putchar(va_arg(args, int));
+                    break;
+                case 's':
+                    count += print_string(va_arg(args, char *));
+                    break;
+                case '%':
+                    count += _putchar('%');
+                    break;
+                case 'd':
+                case 'i':
+                    count += print_number(va_arg(args, int));
+                    break;
+                case 'u':
+                    count += print_unsigned(va_arg(args, unsigned int));
+                    break;
+                case 'o':
+                    count += print_octal(va_arg(args, unsigned int));
+                    break;
+                case 'x':
+                case 'X':
+                    count += print_hex(va_arg(args, unsigned int), *format == 'X');
+                    break;
+                case 'p':
+                    count += print_pointer(va_arg(args, void *));
+                    break;
+                default:
+                    count += _putchar('%') + _putchar(*format);
+                    break;
+            }
         }
         else
         {
             count += _putchar(*format);
         }
+
         format++;
     }
 

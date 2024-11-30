@@ -22,4 +22,3 @@ int print_hex(unsigned int n, int uppercase)
 
 	return (count);
 }
-
