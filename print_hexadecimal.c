@@ -10,14 +10,16 @@
 
 int print_hex(unsigned int n, int uppercase)
 {
-    int count = 0;
-    char hex_char;
+	int count = 0;
+	char hex_char;
 
-    if (n / 16)
-        count += print_hex(n / 16, uppercase);
+	if (n / 16)
+	count += print_hex(n / 16, uppercase);
 
-    hex_char = (n % 16 < 10) ? (n % 16 + '0') : (n % 16 - 10 + (uppercase ? 'A' : 'a'));
-    count += _putchar(hex_char);
+	hex_char = (n % 16 < 10) ? (n % 16 + '0') :
+	(n % 16 - 10 + (uppercase ? 'A' : 'a'));
+	count += _putchar(hex_char);
 
-    return (count);
+	return (count);
 }
+
