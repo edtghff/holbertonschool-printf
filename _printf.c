@@ -3,7 +3,7 @@
 /**
  * _printf - printf function
  * @format: format string
- * 
+ *
  * Return: Number of characters
  */
 
