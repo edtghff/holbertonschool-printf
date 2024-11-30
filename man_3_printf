@@ -47,7 +47,7 @@ Prints an unsigned hexadecimal integer (lowercase for `%x`, uppercase for `%X`).
 
 .TP
 .B %p
-Prints a pointer address in hexadecimal format.
+Prints a pointer address in hexadecimal format (with `0x` prefix).
 
 .SH RETURN VALUE
 The
@@ -62,23 +62,26 @@ The following examples demonstrate usage of
 .B _printf:
 
 .TP
-.B printf("%c", 'H');
+.B _printf("%c", 'H');
 Prints the character `H`.
 
 .TP
-.B printf("String: %s", "Holberton");
+.B _printf("String: %s", "Holberton");
 Prints the string `String: Holberton`.
 
 .TP
-.B printf("Decimal: %d", 42);
+.B _printf("Decimal: %d", 42);
 Prints the signed decimal integer `Decimal: 42`.
 
+.TP
+.B _printf("Pointer: %p", &main);
+Prints the pointer address in hexadecimal, e.g., `Pointer: 0x401030`.
+
 .SH AUTHOR
-Ahmed Taghiyev & Renat Mirzayev, written by Holberton School students as a part of the low-level programming curriculum
+Ahmed Taghiyev & Renat Mirzayev & Leyla Suleymanova, written by Holberton School students as a part of the low-level programming curriculum.
 
 .SH BUGS
-No b
+No known bugs.
 
 .SH SEE ALSO
 .BR printf (3)
-
