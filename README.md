@@ -39,5 +39,5 @@ To clone and build the project:
    ```bash
    cd holbertonschool-printf
 3. Compile the project:
-  ```bash
-  make
+    ```bash
+    make
